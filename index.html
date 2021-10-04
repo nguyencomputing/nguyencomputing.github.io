@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>James Nguyen's Personal Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <style>
+        #footer .container .row {
+          padding-bottom:8px;
+        }
+        marquee{
+        font-size: 30px;
+        font-weight: 800;
+        font-family: sans-serif;
+        background-image: gradient(linear, left top, right top,
+          color-stop(0, red),
+          color-stop(0.15, orange),
+          color-stop(0.3, yellow),
+          color-stop(0.45, green),
+          color-stop(0.65, blue),
+          color-stop(0.8, indigo),
+          color-stop(1, violet)
+        );
+        color:transparent;
+        background-clip: text;
+  
+        background-image: -webkit-gradient(linear, left top, right top,
+          color-stop(0, red),
+          color-stop(0.15, orange),
+          color-stop(0.3, yellow),
+          color-stop(0.45, green),
+          color-stop(0.65, blue),
+          color-stop(0.8, indigo),
+          color-stop(1, violet)
+        );
+        -webkit-background-clip: text;
+  }      .blink {
+          animation: blinker 0.3s linear infinite;
+        }
+        @keyframes blinker {
+          50% {
+            opacity: 0;
+          }
+        }
+</style>
+  <body>
+  <section id="frame" class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World!
+      </h1>
+      <p id="description" class="subtitle">
+      Hey, I'm James and this is my personal website, hosted with GitHub Pages. <br> <br>
+      There's not much here as of right now but you could always just come back later if you fancy seeing me embarass myself with the things I post here :)
+      </p>
+      <p id="buttons">
+        <button onclick="firstButton()", class="button is-primary">Don't click here!</button>
+      </p>
+    </div>
+  </section>
+  <div id="crazy" style="display:none">
+  <marquee class="blink" direction="right" behavior="alternate" scrollamount="10" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="alternate" scrollamount="20" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="alternate" scrollamount="4" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="30" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="alternate" scrollamount="15" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="alternate" scrollamount="9" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="alternate" scrollamount="40" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="23" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="alternate" scrollamount="48" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="33" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="alternate" scrollamount="3" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="50" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="18" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="alternate" scrollamount="27" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="41" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="100" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="4" >OoOhH tRipPy!</marquee>
+    
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="410" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="67" >OoOhH tRipPy!</marquee>
+  
+  <marquee class="blink" direction="right" behavior="scroll" scrollamount="800" >OoOhH tRipPy!</marquee>
+    
+  <marquee class="blink" direction="left" behavior="scroll" scrollamount="25" >OoOhH tRipPy!</marquee>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>
+  <script>
+    var buttons = document.getElementById("buttons");
+    var music = new Audio('purple.mp3');
+    music.currentTime+=1000;
+    function firstButton() {
+        let button1 = document.createElement("button");
+        button1.innerHTML = "Stop clicking!";
+        button1.id = "button1";
+        button1.className = 'button is-link';
+        buttons.innerHTML += "<br> <br>";
+        button1.onclick = function() {
+          let button2 = document.createElement("button");
+          button2.innerHTML = "Please stop clicking!!";
+          button2.id = "button2";
+          button2.className = 'button is-warning';
+          buttons.innerHTML += "<br> <br>";
+          button2.onclick = function() {
+            let button3 = document.createElement("button");
+            button3.innerHTML = "You're gonna regret this!!!";
+            button3.id = "button3";
+            button3.className = 'button is-danger';
+            buttons.innerHTML += "<br> <br>";
+            button3.onclick = function() {
+                music.play();
+                document.getElementById("crazy").style.display = "block";
+                document.getElementById("frame").style.display = "none";
+                var bkColor = document.body.style.backgroundColor;
+                flashPurple(0, bkColor);
+            }
+            buttons.appendChild(button3);
+          };
+          buttons.appendChild(button2);
+        };
+        buttons.appendChild(button1);
+    };
+    function flashPurple(counter, bkColor){
+        var purples = ['#3c1361', '#52307c', '#663a82', '#7c5295', '#b491c8', '#bca0dc'];
+        var index = Math.floor(Math.random()*purples.length)+1;
+        document.body.style.backgroundColor = purples[index];
+        counter++;
+        setTimeout(flashPurple.bind(null, counter, bkColor), 15);
+    };
+</script>
+</html>
