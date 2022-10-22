@@ -37,7 +37,7 @@
 </html>
 <script>
   function cryptorender(element, timestep, groundtruth){
-    if (timestep < 6){
+    if (timestep < 10){
         var ascii_low = 174;
         let ascii_high = 255;
         var random_string = "";
@@ -61,7 +61,7 @@
   function main(){
     var element= document.getElementById("greeting"); 
     var groundtruth=element.innerHTML;
-    cryptorender(element, 2, groundtruth); 
+    cryptorender(element, 0, groundtruth); 
 
 }
 
