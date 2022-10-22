@@ -25,7 +25,7 @@
     </nav>
   <section id="frame" class="section">
     <div class="container">
-      <h1 class="title">
+      <h1 id="greeting" class="title">
         Hello World!
       </h1>
     <p> 
@@ -35,3 +35,14 @@
 
 
 </html>
+<script>
+  function main(){
+    var element= document.getElementById("greeting"); 
+    var groundtruth=element.innerHTML;
+    cryptorender(element, 2, groundtruth); 
+
+}
+
+
+main();
+</script>
