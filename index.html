@@ -50,66 +50,9 @@
   </div>
   </body>
 
-  <div class="img-frame" >
-                    <img src="logo.png" id="propic1" class=propic>
-                </div>
-  
-  <div class=funk>
-            <div class="crazy-mode-toggler">
-                <input type="checkbox" id="purple-toggler">
-                <label for="purple-toggler" aria-label="Dancin">  </label>
-            </div>
-            <audio id="purple_audio">
-                <source src="purple.mp3" type="audio/mpeg">
-            </audio>
-            <div id="pseudowarning">Spice it up? Turn your sound on.</div>
-            <div id="warning" class="tab5">WARNING: May potentially trigger seizures for people with photosensitive epilepsy.</div>
-        </div>
-
-
 
 </html>
 <script>
-  function setCrazyEventListener(){
-    document.getElementById("purple-toggler").addEventListener("change", getCrazy);
-}
-
-function getCrazy(){
-    var checkbox = document.getElementById("purple-toggler");
-    if (checkbox.checked){
-        console.log("getting crazy");
-        setPicByIndex(2);
-        
-        var purplebeats = document.getElementById("purple_audio"); 
-        purplebeats.currentTime=0;
-        purplebeats.play();
-        // disco
-        var bkColor = document.body.style.backgroundColor;
-        flashPurple(0, bkColor);
-        // disc
-        document.getElementsByClassName("img-frame")[0].classList.add("twirl");
-    }
-    else{
-        console.log("calming down");
-        document.getElementsByClassName("img-frame")[0].classList.remove("twirl");
-        document.getElementById("purple_audio").pause();
-    }
-}
-
-function flashPurple(counter, bkColor){
-    if (!document.getElementById("purple_audio").paused){// if (counter < 11000){
-        var purples = ['#3c1361', '#52307c', '#663a82', '#7c5295', '#b491c8', '#bca0dc'];
-        var index = Math.floor(Math.random()*purples.length)+1;
-        document.body.style.backgroundColor = purples[index];
-        counter++;    
-        setTimeout(flashPurple.bind(null, counter, bkColor), 15);
-    }
-    else{
-        document.body.style.background = bkColor;
-        setPicByIndex(1);
-        document.getElementsByClassName("img-frame")[0].classList.remove("twirl");
-    }
-}
   function cryptorender(element, timestep, groundtruth){
     if (timestep < 10){
         var ascii_low = 174;
